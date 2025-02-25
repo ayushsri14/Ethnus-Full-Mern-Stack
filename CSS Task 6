@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 350px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.profile-img img {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #d9534f;
+    color: white;
+    margin-top: 10px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.remember-me input {
+    margin-right: 5px;
+}
+
+.links {
+    margin-top: 10px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
