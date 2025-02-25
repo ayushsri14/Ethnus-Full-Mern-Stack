@@ -1,0 +1,49 @@
+body {
+    background-color: #d4d420;
+    font-family: "Georgia", serif;
+    margin: 30px;
+    padding: 20px;
+}
+
+h1 {
+    color: purple;
+    font-size: 24px;
+}
+
+p {
+    color: brown;
+}
+
+em {
+    color: purple;
+    font-style: italic;
+}
+
+nav {
+    width: 150px;
+    float: left;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+nav a {
+    display: block;
+    width: 120px;
+    text-decoration: none;
+    background-color: white;
+    color: blue;
+    border: 2px solid black;
+    padding: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+nav a:hover {
+    background-color: #eee;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: black;
+}
