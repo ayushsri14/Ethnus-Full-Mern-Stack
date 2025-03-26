@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #fbd3e9, #bb377d);
+            text-align: center;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            width: 50%;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        input, select, textarea {
+            width: 80%;
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        .register-btn {
+            background: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .register-btn:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form id="registrationForm" onsubmit="return validateForm()">
+        First Name: <input type="text" id="firstName"><br>
+        <span class="error" id="firstNameError"></span><br>
+
+        Last Name: <input type="text" id="lastName"><br>
+        <span class="error" id="lastNameError"></span><br>
+
+        Email: <input type="email" id="email"><br>
+        <span class="error" id="emailError"></span><br>
+
+        Password: <input type="password" id="password"><br>
+        <span class="error" id="passwordError"></span><br>
+
+        Re-enter Password: <input type="password" id="confirmPassword"><br>
+        <span class="error" id="confirmPasswordError"></span><br>
+
+        Gender:
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female<br>
+        <span class="error" id="genderError"></span><br>
+
+        Age: <input type="number" id="age"><br>
+        <span class="error" id="ageError"></span><br>
+
+        Phone Number: <input type="text" id="phone"><br>
+        <span class="error" id="phoneError"></span><br>
+
+        Address: <textarea id="address"></textarea><br>
+        <span class="error" id="addressError"></span><br>
+
+        State: <input type="text" id="state"><br>
+        <span class="error" id="stateError"></span><br>
+
+        Country: 
+        <select id="country">
+            <option value="">Choose your country</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+        </select><br>
+        <span class="error" id="countryError"></span><br>
+
+        Languages known:
+        <input type="checkbox" value="English"> English
+        <input type="checkbox" value="Kannada"> Kannada
+        <input type="checkbox" value="Hindi"> Hindi
+        <input type="checkbox" value="Telugu"> Telugu<br>
+
+        <input type="checkbox" id="declaration"> I declare all the details are true<br>
+        <span class="error" id="declarationError"></span><br>
+
+        <button type="submit" class="register-btn">REGISTER</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            document.querySelectorAll('.error').forEach(e => e.innerHTML = '');
+
+            let firstName = document.getElementById("firstName").value;
+            if (firstName.trim() === "") {
+                document.getElementById("firstNameError").innerText = "This field is required";
+                isValid = false;
+            }
+
+            let lastName = document.getElementById("lastName").value;
+            if (lastName.trim() === "") {
+                document.getElementById("lastNameError").innerText = "This field is required";
+                isValid = false;
+            }
+
+            let email = document.getElementById("email").value;
+            let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").innerText = "Enter a valid email";
+                isValid = false;
+            }
+
+            let password = document.getElementById("password").value;
+            if (password.length < 6) {
+                document.getElementById("passwordError").innerText = "Password must be at least 6 characters";
+                isValid = false;
+            }
+
+            let confirmPassword = document.getElementById("confirmPassword
