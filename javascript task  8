@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Animation</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #train {
+            position: absolute;
+            top: 150px;
+            left: 0;
+            width: 200px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        h2 {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="train" src="https://www.clipartmax.com/png/middle/209-2097856_clip-art-train-clipart.png" alt="Train">
+
+    <h2>Click the following buttons to handle animation</h2>
+
+    <div class="buttons">
+        <button onclick="startTrain()">Start</button>
+        <button onclick="stopTrain()">Stop</button>
+    </div>
+
+    <script>
+        let train = document.getElementById("train");
+        let position = 0;
+        let interval;
+
+        function startTrain() {
+            clearInterval(interval);
+            interval = setInterval(() => {
+                if (position > window.innerWidth) {
+                    position = -200; // Reset train position when it goes off screen
+                }
+                position += 5;
+                train.style.left = position + "px";
+            }, 50);
+        }
+
+        function stopTrain() {
+            clearInterval(interval);
+        }
+    </script>
+
+</body>
+</html>
