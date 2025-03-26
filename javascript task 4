@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Date and Time</title>
+    <script>
+        function showDate() {
+            let today = new Date();
+            let day = today.getDate();
+            let month = today.toLocaleString('default', { month: 'long' });
+            let year = today.getFullYear();
+            document.getElementById("dateDisplay").innerText = day + "/" + month + "/" + year;
+        }
+
+        function showTime() {
+            let now = new Date();
+            document.getElementById("timeDisplay").innerText = now.toString();
+        }
+    </script>
+</head>
+<body>
+    <button onclick="showDate()">show date</button>
+    <p id="dateDisplay"></p>
+
+    <button onclick="showTime()">show Time</button>
+    <p id="timeDisplay"></p>
+</body>
+</html>
